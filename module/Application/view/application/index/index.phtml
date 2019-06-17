@@ -1,0 +1,49 @@
+<?php ?>
+<center>
+    <form method="post" action="application/login">
+        Username:<br>
+        <input type="text" name="fname"><br>
+        Password:<br>
+        <input type="password" name="lname">
+        <br>
+       <button type="button" id="lgnButt" onclick="login(this.id)" class="btn btn-primary">Submit</button>
+    </form>
+</center>
+
+
+<script type="text/javascript" >
+ 
+ class Login {
+
+    constructor() {
+
+    }
+
+    ajaxLogin(formID) {
+        
+        $("#"+formID).serialize();
+        
+        return  $.ajax({
+            url: '/Ads/public/application/login',
+            dataType: 'text',
+            type: 'POST',
+            contentType: 'application/x-www-form-urlencoded',
+            async: true,
+            data: {},
+            success: function (data, textStatus, jQxhr) {
+                alert(data);//debuging
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(jqXhr);
+            }
+        });
+    }
+}
+
+    
+    function login(formID){
+        login = new Login();
+        login.ajaxLogin(formID);
+    }
+</script>
