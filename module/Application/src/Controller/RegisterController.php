@@ -20,9 +20,12 @@ class RegisterController extends AbstractActionController {
         return new ViewModel();
     }
 
-    public function loginAction() {
+    public function registerAction() {
 
-        if (isset($this->getRequest()->getPost())){
+        if (empty($POST)){
+            header("Location: /Ads/public/register");
+            die();
+        }else{
             
         }
     }
