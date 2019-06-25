@@ -7,8 +7,8 @@
 
 namespace Application\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Mvc\Controller\AbstractActionController;
 
 
 class RegisterController extends AbstractActionController {
@@ -22,14 +22,9 @@ class RegisterController extends AbstractActionController {
 
     public function loginAction() {
 
-        $this->response->getHeaders()->addHeaderLine('Content-Type: text/plain');
-        
-        if (!(empty($this->getRequest()->getPost()->toArray()))) {
+        if (isset($this->getRequest()->getPost())){
             
-            $loginParms = $this->getRequest()->getPost()->toArray();
-            return $this->response->setContent("myNigga");
         }
-        return $this->response->setContent("notMyNigga");
     }
 
     function setServiceManager($serviceManager){
