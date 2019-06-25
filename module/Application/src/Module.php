@@ -15,4 +15,15 @@ class Module
     {
         return include __DIR__ . '/../config/module.config.php';
     }
+    
+    public function getServiceConfig(){
+        return [
+            'factories' =>[
+            Model\Register::class => function($container){
+                $tableGateway = $container->get(Model\Register::class);
+                return new Model\Register($tableGateway);
+            }      
+        ]
+    ];
+    }
 }
