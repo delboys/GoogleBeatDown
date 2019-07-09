@@ -26,7 +26,11 @@
         "zendframework/zend-mvc-plugins": "^1.0.1",
         "zendframework/zend-psr7bridge": "^0.2.2",
         "zendframework/zend-session": "^2.7.1",
-        "zendframework/zend-servicemanager-di": "^1.0"
+        "zendframework/zend-servicemanager-di": "^1.0",
+        "zendframework/zend-developer-tools": "^1.2",
+        "san/san-session-toolbar": "^2.0",
+        "bjyoungblood/bjy-profiler": "^1.1",
+        "webino/zend-db-profiler": "^1.1"
     },
     "autoload": {
         "psr-4": {
@@ -52,7 +56,6 @@
         "test": "phpunit"
     },
     "require-dev": {
-        "zendframework/zend-developer-tools": "^1.1.0",
         "zendframework/zend-test": "^3.0.1"
     }
 }

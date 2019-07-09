@@ -7,23 +7,27 @@
 
 namespace Application;
 
-class Module
-{
+class Module {
+
     const VERSION = '3.0.3-dev';
 
-    public function getConfig()
-    {
+    public function getConfig() {
         return include __DIR__ . '/../config/module.config.php';
     }
-    
-    public function getServiceConfig(){
+
+    public function getServiceConfig() {
         return [
-            'factories' =>[
-            Model\Register::class => function($container){
-                $tableGateway = $container->get(Model\Register::class);
-                return new Model\Register($tableGateway);
-            }      
-        ]
-    ];
+            'factories' => [
+                Model\Register::class => function($container) {
+                    $tableGateway = $container->get(Model\Register::class);
+                    return new Model\Register($tableGateway);
+                }
+            ],
+            'invokables' => [
+            Model\Register::class => Model\Register::class
+            
+            ],
+        ];
     }
+
 }
